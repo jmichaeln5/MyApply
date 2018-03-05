@@ -5,12 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Company</th>
+      <th>Date Applied</th>
       <th>Position</th>
-      <th>Skills</th>
+      <th>Company</th>
       <th>State</th>
-      <th>Salary</th>
-      <th>Comments</th>
       <th>Site</th>
       <th colspan="3"></th>
     </tr>
@@ -19,12 +17,10 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.company %></td>
+        <td><%= time_ago_in_words(job.created_at) %></td>
         <td><%= job.position %></td>
-        <td><%= job.skills %></td>
+        <td><%= job.company %></td>
         <td><%= job.state %></td>
-        <td><%= job.salary %></td>
-        <td><%= job.comments %></td>
         <td><%= job.site %></td>
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
@@ -34,6 +30,8 @@
   </tbody>
 </table>
 
+
 <br>
 
-<%= link_to 'New Job', new_job_path %>
+<%= link_to 'New Job', new_job_path %> |
+<%= link_to 'Back', :back %>
