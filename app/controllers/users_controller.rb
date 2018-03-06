@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     redirect_to(current_user)
-  end 
+  end
 
   def show
     @user = User.find(params[:id])
@@ -11,7 +11,5 @@ class UsersController < ApplicationController
 
     redirect_to(root_url) unless current_user.id == @user.id
   end
-
-
 
 end
