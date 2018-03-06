@@ -10,11 +10,10 @@
   <table>
     <thead>
       <tr>
-        <th>Date <br> Applied</th>
         <th>Position</th>
         <th>Company</th>
-        <th>State</th>
-        <th>Site</th>
+        <th>Date <br> Applied</th>
+
         <th></th>
         <th></th>
         <th>Options</th>
@@ -26,16 +25,15 @@
     <tbody>
       <% @user_jobs.order("created_at DESC").each do |user_job| %>
         <tr>
-          <td><%= time_ago_in_words(user_job.created_at) %></td>
           <td><%= user_job.position %></td>
           <td><%= user_job.company %></td>
-          <td><%= user_job.state %></td>
-          <td><%= user_job.site %> </td>
+          <td><%= time_ago_in_words(user_job.created_at) %></td>
+
           <td></td>
           <td></td>
-          <td><%= link_to 'Show ', user_job %> |
+          <td><%= link_to ' Show ', user_job %> |
               <%= link_to ' Edit ', edit_job_path(user_job) %> |
-              <%= link_to ' Destroy', user_job, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to ' Destroy ', user_job, method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% end %>
