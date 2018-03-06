@@ -1,37 +1,3 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Jobs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Date Applied</th>
-      <th>Position</th>
-      <th>Company</th>
-      <th>State</th>
-      <th>Site</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= time_ago_in_words(job.created_at) %></td>
-        <td><%= job.position %></td>
-        <td><%= job.company %></td>
-        <td><%= job.state %></td>
-        <td><%= job.site %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-<br>
-
-<%= link_to 'New Job', new_job_path %> |
-<%= link_to 'Back', :back %>
+<h1> You've Selected an Ivalid Option </h1>

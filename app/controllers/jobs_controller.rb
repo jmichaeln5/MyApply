@@ -1,15 +1,23 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  # before_action :correct_user
+
 
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all.order("created_at DESC")
+    redirect_to(current_user)
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+
+    redirect_to(root_url) unless current_user.id == @job.user.id
+
+    @job = Job.find(params[:id])
+    @comments = @job.comments
   end
 
   # GET /jobs/new
@@ -19,6 +27,8 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/edit
   def edit
+    @user= User.find(current_user.id)
+    redirect_to(root_url) unless current_user.id == @job.user.id
   end
 
   # POST /jobs
@@ -54,14 +64,25 @@ class JobsController < ApplicationController
   # DELETE /jobs/1
   # DELETE /jobs/1.json
   def destroy
+
+    @user= User.find(current_user.id)
+     redirect_to(root_url) unless current_user.id == @job.user.id
+
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Job was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+
+    ## Confirms the correct user.
+    # def correct_user
+    #  @user= User.find(current_user.id)
+    #   redirect_to(root_url) unless current_user.id == @job.user.id
+    # end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_job
       @job = Job.find(params[:id])

@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Application to <%= @job.company %> </h1>
+
 <p>
   <strong>Company:</strong>
   <%= @job.company %>
@@ -30,5 +32,18 @@
   <%= @job.site %>
 </p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Edit Job', edit_job_path(@job) %> |
+<%= link_to ' Destroy', @job, method: :delete, data: { confirm: 'Are you sure?' }%>
+<br>
+<br>
+
+
+<hr>
 <%= link_to 'Back', jobs_path %>
+
+
+<!-- <p>
+  <strong> <%#= @job.comments.count%> Comments</strong>
+</p> -->
+
+<%#= link_to 'Add Comment', new_job_comment_path(@job) %>

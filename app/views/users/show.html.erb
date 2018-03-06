@@ -1,0 +1,60 @@
+<h1>My Jobs</h1>
+
+<!-- Page redirect if not correct user ****  if    ****** -->
+<%# if @user == @correct_user %>
+<!-- Page redirect if not correct user ****  if    ****** -->
+
+<br>
+<h2> <%= @user.email %> </h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date <br> Applied</th>
+        <th>Position</th>
+        <th>Company</th>
+        <th>State</th>
+        <th>Site</th>
+        <th></th>
+        <th></th>
+        <th>Options</th>
+
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @user_jobs.order("created_at DESC").each do |user_job| %>
+        <tr>
+          <td><%= time_ago_in_words(user_job.created_at) %></td>
+          <td><%= user_job.position %></td>
+          <td><%= user_job.company %></td>
+          <td><%= user_job.state %></td>
+          <td><%= user_job.site %> </td>
+          <td></td>
+          <td></td>
+          <td><%= link_to 'Show ', user_job %> |
+              <%= link_to ' Edit ', edit_job_path(user_job) %> |
+              <%= link_to ' Destroy', user_job, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Add New Job', new_job_path %> |
+  <%= link_to 'Back', :back %>
+
+
+
+  <!-- Page redirect if not correct user ****  else   ****** -->
+  <%# else %>
+  <!-- Page redirect if not correct user ****  else   ****** -->
+
+
+
+  <!-- Page redirect if not correct user ****  end   ****** -->
+  <%# end  %>
+  <!-- Page redirect if not correct user ****  end   ****** -->
