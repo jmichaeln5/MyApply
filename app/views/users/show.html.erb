@@ -5,14 +5,19 @@
 <!-- Page redirect if not correct user ****  if    ****** -->
 
 <br>
-<h2> <%= @user.email %> </h2>
 
   <table>
     <thead>
       <tr>
+        <th>Applied</th>
+        <th></th>
+
         <th>Position</th>
+        <th></th>
+
         <th>Company</th>
-        <th>Date <br> Applied</th>
+        <th></th>
+
 
         <th></th>
         <th></th>
@@ -25,14 +30,19 @@
     <tbody>
       <% @user_jobs.order("created_at DESC").each do |user_job| %>
         <tr>
-          <td><%= user_job.position %></td>
-          <td><%= user_job.company %></td>
           <td><%= time_ago_in_words(user_job.created_at) %></td>
+          <td></td>
+
+          <td><%= user_job.position %></td>
+          <td></td>
+          <td><%= user_job.company %></td>
+          <td></td>
+
 
           <td></td>
           <td></td>
-          <td><%= link_to ' Show ', user_job %> |
-              <%= link_to ' Edit ', edit_job_path(user_job) %> |
+          <td><%= link_to ' Show ', user_job %>
+              <%= link_to ' Edit ', edit_job_path(user_job) %>
               <%= link_to ' Destroy ', user_job, method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
@@ -41,6 +51,7 @@
   </table>
 
   <br>
+  <hr>
 
   <%= link_to 'Add New Job', new_job_path %> |
   <%= link_to 'Back', :back %>
