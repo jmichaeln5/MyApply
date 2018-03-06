@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     redirect_to(current_user)
-  end
+  end 
 
   def show
     @user = User.find(params[:id])
