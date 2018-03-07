@@ -1,11 +1,5 @@
 <h1>My Jobs</h1>
 
-<!-- Page redirect if not correct user ****  if    ****** -->
-<%# if @user == @correct_user %>
-<!-- Page redirect if not correct user ****  if    ****** -->
-
-<br>
-
   <table>
     <thead>
       <tr>
@@ -20,8 +14,6 @@
 
 
         <th></th>
-        <th></th>
-        <th>Options</th>
 
         <th colspan="3"></th>
       </tr>
@@ -40,10 +32,8 @@
 
 
           <td></td>
-          <td></td>
           <td><%= link_to ' Show ', user_job %>
-              <%= link_to ' Edit ', edit_job_path(user_job) %>
-              <%= link_to ' Destroy ', user_job, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <br>
           </td>
         </tr>
       <% end %>
@@ -53,17 +43,4 @@
   <br>
   <hr>
 
-  <%= link_to 'Add New Job', new_job_path %> |
-  <%= link_to 'Back', :back %>
-
-
-
-  <!-- Page redirect if not correct user ****  else   ****** -->
-  <%# else %>
-  <!-- Page redirect if not correct user ****  else   ****** -->
-
-
-
-  <!-- Page redirect if not correct user ****  end   ****** -->
-  <%# end  %>
-  <!-- Page redirect if not correct user ****  end   ****** -->
+  <%= link_to 'Add New Job', new_job_path %> |  <%= link_to ' Back', :back %>
