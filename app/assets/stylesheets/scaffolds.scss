@@ -20,7 +20,7 @@ pre {
 }
 
 a {
-  color: #000;
+  color: rgb(136, 199, 215);
 
   &:visited {
     color: #666;
@@ -28,7 +28,7 @@ a {
 
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: rgb(29, 95, 236);
   }
 }
 
