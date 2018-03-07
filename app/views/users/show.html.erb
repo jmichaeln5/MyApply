@@ -22,7 +22,7 @@
     <tbody>
       <% @user_jobs.order("created_at DESC").each do |user_job| %>
         <tr>
-          <td><%= time_ago_in_words(user_job.created_at) %></td>
+          <td><%= time_ago_in_words(user_job.created_at) %> ago </td> 
           <td></td>
 
           <td><%= user_job.position %></td>
