@@ -6,6 +6,7 @@
   <strong>Date Applied: </strong> <%= @job.created_at.to_date %>
 </p> -->
 
+
 <p>
   <strong>Date Applied: </strong> <%= time_ago_in_words(@job.created_at) %> ago
 </p>
