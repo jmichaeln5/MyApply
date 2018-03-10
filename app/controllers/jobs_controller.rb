@@ -13,11 +13,10 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-
     redirect_to(root_url) unless current_user.id == @job.user.id
 
     @job = Job.find(params[:id])
-    @comments = @job.comments
+    @comments = Comment.where(job_id: @job).order("created_at DESC")
   end
 
   # GET /jobs/new

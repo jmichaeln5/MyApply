@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+
+<br>
+
 <h1>Application to <%= @job.company %> </h1>
 
-<!-- <p>
-  <strong>Date Applied: </strong> <%= @job.created_at.to_date %>
-</p> -->
-
+<br>
 
 <p>
-  <strong>Date Applied: </strong> <%= time_ago_in_words(@job.created_at) %> ago
+  <strong>Date Applied: </strong> <%= time_ago_in_words(@job.created_at) %>
 </p>
 
 <p>
@@ -41,14 +41,32 @@
   <%= @job.site  %>
 </p>
 
-<%= link_to 'Edit Job', edit_job_path(@job) %> |
-<%= link_to ' Destroy', @job, method: :delete, data: { confirm: 'Are you sure?' }%>
-<br>
 <br>
 
+<%= link_to 'Edit Job', edit_job_path(@job) %>
+<%= link_to 'Destroy', @job, method: :delete, data: { confirm: 'Are you sure?' }%>
+<br>
+<br>
+<%= link_to 'Back', :back %>
+<br>
+<br>
 
 <hr>
-<%= link_to 'Back', jobs_path %>
+
+<br>
+<br>
+<!-- if 0 comments dont show the comment count (still show ability to comment) -->
+<!-- else -->
+          <!-- (show next line )-->
+<!-- <h1> <%= @comments.count%>  Comments for  <%= @job.company %> </h1>     -->
+<div>
+  <h1> <%= @comments.count%>  Comments for  <%= @job.company %> </h1>
+</div>
+
+<%= render 'comments/form' %>
+<br>
+
+<%= link_to 'Back', :back %>
 
 
 <!-- <p>

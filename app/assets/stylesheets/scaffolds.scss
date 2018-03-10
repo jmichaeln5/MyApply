@@ -5,6 +5,7 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  text-align: center;
 }
 
 p, ol, ul, td {
@@ -32,6 +33,13 @@ a {
     text-decoration: none;
   }
 }
+
+//  // **********  Centers tables Begin ************    //     //
+table.center {
+  margin-left:auto;
+  margin-right:auto;
+}
+//  // **********  Centers tables End************    //     //
 
 th {
   padding-bottom: 5px;
