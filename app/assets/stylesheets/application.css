@@ -50,6 +50,37 @@ h1 {
 table {
 }
 
+/* //  // **********  Centers tables Begin ************    //     // */
+table.center {
+  margin-left:auto;
+  margin-right:auto;
+  width: 100%;
+}
+/* //  // **********  Centers tables End************    //     // */
+
+th {
+  padding-bottom: 5px;
+  text-align: center;
+
+}
+
+td {
+  padding: 0 5px 7px;
+  text-align: center;
+
+}
+
+/* th:nth-child(odd) {
+    background: rgb(228, 187, 110);
+}
+
+
+td:nth-child(odd) {
+    background: rgb(228, 187, 110);
+}
+ */
+
+
 a {
   font-family: Helvetica;
   line-height: 1.5;
