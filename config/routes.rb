@@ -5,13 +5,9 @@ Rails.application.routes.draw do
   # get '/jobs/:job_id/comments/:id' => 'comments#show'
   # get '/jobs/:job_id/comments/new(.:format)'  => 'comments#new'
 
-  # resources :jobs do
-  #   resources :comments
-  # end
-
   resources :users
   resources :jobs
-  
+
   resources :jobs do
     resources :comments
   end

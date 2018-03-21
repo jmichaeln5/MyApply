@@ -8,6 +8,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="icon" href="app/images.apply_.png">
+
     <%= stylesheet_link_tag 'application', href: "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -28,9 +30,9 @@
        <%=link_to 'New Job', new_job_path(@user) %>
        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>﻿
     <% else %>
-       <%= link_to 'Home', root_url %> 
-       <%=link_to 'Jobs', jobs_path %> 
-       <%= link_to 'Log In', new_user_session_path%> 
+       <%= link_to 'Home', root_url %>
+       <%=link_to 'Jobs', jobs_path %>
+       <%= link_to 'Log In', new_user_session_path%>
        <%= link_to 'Sign Up', new_user_registration_path %>
     <% end %>
     <hr>
