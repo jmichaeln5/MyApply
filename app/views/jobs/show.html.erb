@@ -2,9 +2,73 @@
 
 <p class="large-top">Application to <%= @job.company %></p>
 
-<table  class="table table-bordered">
-  <!-- <tr class="<%#= ('oddrow') -%>"> -->
-    <tr class="<%= cycle('oddrow', 'evenrow') -%>">
+<ul>
+
+  <li>
+    <strong>Applied:</strong>
+    <%= time_ago_in_words(@job.created_at)%> ago
+  </li>
+<br>
+  <li>
+      <strong>Company:</strong>
+      <%= @job.company %>
+  </li>
+<br>
+  <li>
+      <strong>Position:</strong>
+      <%= @job.position %>
+
+  </li>
+  <br>
+  <li>
+      <strong>Skills:</strong>
+      <%= @job.skills %>
+  </li>
+<br>
+  <li>
+      <strong>Location:</strong>
+      <%= @job.state %>
+  </li>
+  <br>
+  <li>
+      <strong>Salary:</strong>
+      <%= @job.salary %>
+  </li>
+  <br>
+  <li>
+      <strong>Site:</strong>
+      <%= @job.site  %>
+  </li>
+</ul>
+
+<ul>
+  <%= link_to 'Edit Job', edit_job_path(@job) %>
+    <br>
+    <br>
+    <br>
+  <%= link_to ' Delete ', @job, method: :delete, data: { confirm: 'Are you sure?' }%>
+    <br>
+    <br>
+    <br>
+  <%= link_to 'Back', :back %>
+</ul>
+
+<div>
+  <h1> <%= @comments.count%>  Comments for  <%= @job.company %> </h1>
+</div>
+
+<div>
+<%= render 'comments/form' %>
+</div>
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+
+
+<!-- <table  class="table table-bordered"> -->
+    <!-- <tr class="<%= cycle('oddrow', 'evenrow') -%>">
 
 
       <th>
@@ -57,13 +121,6 @@
 </table>
 
 
-
-<br>
-<br>
-
-<br>
-<br>
-
 <div>
   <h1> <%= @comments.count%>  Comments for  <%= @job.company %> </h1>
 </div>
@@ -72,7 +129,7 @@
 <%= render 'comments/form' %>
 </div>
 <br>
-
+ -->
 
 <!-- <p>
   <strong> <%#= @job.comments.count%> Comments</strong>

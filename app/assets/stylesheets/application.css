@@ -42,6 +42,15 @@ body {
   font-size: 100%;
   line-height: 1.2;
   text-align: center;
+  text-decoration: none;
+}
+
+.email:hover{
+  color: #eee;
+  font-size: 130%;
+  padding: 1%;
+  background-color: #6dd168;
+  opacity: .2;
 }
 
 div .large-top{
@@ -58,7 +67,7 @@ div {
       font-weight: lighter;
 }
 
-div a{
+div > a{
       color: #eee;
       font-size: 100%;
       font-family: verdana, arial, helvetica, sans-serif;
@@ -68,8 +77,9 @@ div a{
       border-radius: 10%;
 }
 
-div a:hover{
+div > a:hover{
   color: #eee;
+  font-size: 150%;
   padding: 1%;
   background-color: #6dd168;
   opacity: .2;
@@ -112,9 +122,12 @@ td {
   text-align: center;
   font-size: 150%;
   line-height: 200%;
+  word-wrap: break-word;
+
 }
 
- td a {
+/* Button Styling */
+ td > a {
    font-family: Helvetica;
    border-radius:8%;
    text-align: center;
@@ -133,7 +146,7 @@ table:hover {
 
 td:hover {
   color: #fff;
-  border-top: 5em solid ;
+  border-top: 3em solid ;
   border-top-color: rgb(98, 170, 210);
 }
 
@@ -143,8 +156,6 @@ td:hover a {
 
 
 td a:hover {
-  /* background-color: rgb(91, 163, 107); */
-  /* background-color: rgb(110, 169, 231); */
   background-color: #6dd168;
 }
 
@@ -200,7 +211,35 @@ label {
 }
 
 
-p, ol, ul, td {
+ol, ul {
+  padding: 7% 5% 5% 9%;
+  font-size: 170%;
+  color: #fff;
+  background-color: rgb(177, 156, 230);
+  text-align: center;
+  font-family: verdana, arial, helvetica, sans-serif;
+  word-wrap: break-word;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+ol, ul > a {
+  list-style-type: none;
+  font-family: Helvetica;
+  border-radius:8%;
+  text-align: center;
+  font-size: 90%;
+  padding: 1.7% 30% 1.7% 30%;
+  background-color: rgb(93, 145, 200);
+  text-decoration: none;
+  color: #fff;
+  line-height: 1.5;
+  width: 100%;
+}
+
+ol, ul > a:hover {
+  font-size: 130%;
+  background-color: #6dd168;
 
 }
 
@@ -219,11 +258,3 @@ pre {
   border-width: 1.02px;
 
 }
-
-
-
-
- /* ------------------------------------- */
- /* ------------------------------------- */
- /* ------------------------------------- */
- /* ------------------------------------- */
