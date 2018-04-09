@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if @comment.update(params[:comment].permit(:content))
+    if @comment.update(params[:comment].permit(:comment))
       redirect_to job_path(@job)
     else
       render 'edit'

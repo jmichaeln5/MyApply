@@ -7,7 +7,17 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    redirect_to(current_user)
+    redirect_to(root_url) unless current_user
+
+    @user = current_user
+    @jobs = Job.where(user_id: @user).order("created_at DESC")
+
+    @jobs = if params[:term]
+      Job.where('company LIKE ?', "%#{params[:term]}%")
+    else
+      Job.where(user_id: @user).order("id DESC")
+    end
+
   end
 
   # GET /jobs/1
@@ -15,12 +25,16 @@ class JobsController < ApplicationController
   def show
     redirect_to(root_url) unless current_user.id == @job.user.id
 
+    @user = current_user
     @job = Job.find(params[:id])
     @comments = Comment.where(job_id: @job).order("created_at DESC")
   end
 
   # GET /jobs/new
   def new
+    redirect_to(root_url) unless current_user
+
+    @user = current_user
     @job = current_user.jobs.build
   end
 
@@ -33,6 +47,8 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
+    redirect_to(root_url) unless current_user
+
     @job = current_user.jobs.build(job_params)
 
     respond_to do |format|
@@ -89,6 +105,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:company, :position, :skills, :state, :salary, :site)
+      params.require(:job).permit(:company, :position, :skills, :state, :salary, :site, :term)
     end
 end

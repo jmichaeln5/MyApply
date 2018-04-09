@@ -1,0 +1,119 @@
+/* // Place all the styles related to the Jobs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+.large-top{
+  color: #eee;
+  font-size: 300%;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+table {
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: #6a18ff ;
+  font-size: 100%;
+  line-height: 1.2;
+  color:rgb(247, 237, 247);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: verdana, arial, helvetica, sans-serif;
+
+}
+
+table tr.oddrow {
+  background-color: rgb(115, 103, 226);
+
+}
+
+table tr.evenrow {
+    background-color: rgb(177, 156, 230);
+
+}
+
+th {
+  /* padding: 2%; */
+  text-align: center;
+  padding: 2%;
+  padding-bottom: 5%;
+  font-size: 150%;
+  line-height: 200%;
+
+}
+th a {
+  font-family: Helvetica;
+  border-radius:8%;
+  text-align: center;
+  font-size: 90%;
+  padding: 1.7% 30% 1.7% 30%;
+  background-color: rgb(93, 145, 200);
+  text-decoration: none;
+  color: #fff;
+  line-height: 1.5;
+}
+
+th:hover a {
+  background-color: rgb(98, 170, 210);
+
+}
+
+
+th a:hover {
+  /* background-color: rgb(91, 163, 107); */
+  /* background-color: rgb(110, 169, 231); */
+  background-color: #6dd168 !important;
+
+}
+
+th p {
+font-weight: lighter;
+}
+
+
+td {
+  padding: 2%;
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: 150%;
+  line-height: 200%;
+
+}
+
+ td a {
+   font-family: Helvetica;
+   border-radius:8%;
+   text-align: center;
+   font-size: 90%;
+   padding: 1.7% 30% 1.7% 30%;
+   background-color: rgb(93, 145, 200);
+   text-decoration: none;
+   color: #fff;
+   line-height: 1.5;
+
+}
+
+table:hover {
+  color: #fff;
+}
+
+td:hover {
+  color: #fff;
+  border-top-color: rgb(98, 170, 210);
+;
+
+}
+
+td:hover a {
+  background-color: rgb(98, 170, 210);
+
+}
+
+
+td a:hover {
+  /* background-color: rgb(91, 163, 107); */
+  /* background-color: rgb(110, 169, 231); */
+  background-color: #6dd168;
+
+}

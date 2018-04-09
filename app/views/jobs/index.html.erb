@@ -1,3 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div>
 
-<h1> You've Selected an Ivalid Option </h1>
+  <p class="large-top">My Jobs </p>
+
+  <p>
+    You've Applied to <strong> <%= @jobs.count%> </strong> Jobs.
+  </p>
+  <!-- Search Bar Begin  -->
+  <%#= form_tag(jobs_path, method: :get) do %>
+    <%#= text_field_tag :term, params[:term] %>
+    <%#= submit_tag 'Search', name: nil %>
+  <%# end %><!-- Search Bar End  -->
+  <br>
+    <!-- <table  class="center"> -->
+</div>
+
+
+  <table  class="table table-bordered">
+    <thead>
+      <tr class="<%= cycle('oddrow', 'evenrow') -%>">
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @jobs.order("created_at DESC").each do |user_job| %>
+        <tr class="<%= cycle('oddrow', 'evenrow') -%>">
+          <td>
+<br>
+           <strong>  <%= user_job.position %> </strong>
+            <br>
+           <strong>  <%= user_job.company %> </strong>
+            <br>
+            Applied  <%= time_ago_in_words(user_job.created_at) %> ago
+            <br>
+            <br>
+            <%= link_to ' Show ', user_job %>
+
+            <br>
+            <br>
+
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>

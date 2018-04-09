@@ -1,0 +1,53 @@
+<p>
+  You've Applied to <strong> <%= @jobs.count%> </strong> Jobs.
+</p>
+
+<h1 class= "title-page">My Jobs</h1>
+
+<!-- Search Bar Begin  -->
+<%= form_tag(jobs_path) do %>
+  <%= text_field_tag :term %>
+  <%= submit_tag 'Search Jobs' %>
+<% end %>
+<!-- Search Bar End  -->
+<br>
+  <!-- <table  class="center"> -->
+  <table  class="table table-bordered">
+
+    <thead>
+      <tr class="<%= cycle('oddrow', 'evenrow') -%>">
+        <!-- <th>Applied</th>
+        <th>Position</th>
+        <th>Company</th> -->
+
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @jobs.order("created_at DESC").each do |user_job| %>
+        <tr class="<%= cycle('oddrow', 'evenrow') -%>">
+          <td>
+<br>
+            <%= user_job.position %>
+            <br>
+            <%= user_job.company %>
+            <br>
+            Applied <%= time_ago_in_words(user_job.created_at) %> ago
+            <br>
+            <br>
+            <%= link_to ' Show ', user_job %>
+
+            <br>
+            <br>
+
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Add New Job', @job %> |
+   <%= link_to ' Back', :back %>

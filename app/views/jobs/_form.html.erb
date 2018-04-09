@@ -1,46 +1,41 @@
-<%= form_with(model: @job, local: true) do |form| %>
-  <% if @job.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+<%= form_with model: @job do |form| %>
+<%#= form_with(model: @job, local: true) do |form| %>
+<%#= form_for([@job, @job.comments.build]) do |f| %>
 
-      <ul>
-      <% @job.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
+
+<div class="field">
+  <p>
+  <%= form.label :position %>
+  <%= form.text_field :position, id: :job_position %>
+  </p>
+</div>
+<br>
   <div class="field">
     <%= form.label :company %>
     <%= form.text_field :company, id: :job_company %>
   </div>
-
-  <div class="field">
-    <%= form.label :position %>
-    <%= form.text_field :position, id: :job_position %>
-  </div>
-
+  <br>
   <div class="field">
     <%= form.label :skills %>
     <%= form.text_field :skills, id: :job_skills %>
   </div>
-
+  <br>
   <div class="field">
     <%= form.label :state %>
     <%= form.text_field :state, id: :job_state %>
   </div>
-
+  <br>
   <div class="field">
     <%= form.label :salary %>
     <%= form.text_field :salary, id: :job_salary %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :site %>
+  <%= form.label :site %>
     <%= form.text_field :site, id: :job_site %>
   </div>
-
+<br>
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -22,73 +22,124 @@
 
 html {
   padding: 0;
-  font-family: Helvetica;
   text-align: center;
   /* background-color: rgba(89, 173, 100, 0.76); */
 }
 
 body {
   padding: 0;
-  font-family: Helvetica;
   line-height: 1.2;
   text-align: center;
-  /* background-color:rgb(194, 217, 165) ; */
   /* background-color: rgba(1, 124, 158, 0.1) ; */
+  background-color: #6a18ff ;
 
 }
 
-h1 {
-  font-size: 2em;
-  line-height: 1.2;
+.email{
+  font-family: verdana, arial, helvetica, sans-serif;
   font-weight: lighter;
-  /* color: rgb(115, 103, 226); */
-  color: rgb(161, 150, 193);
-  text-transform: uppercase;
+  color: #fff;
+  font-size: 100%;
+  line-height: 1.2;
   text-align: center;
+}
+
+div .large-top{
+  color: #eee;
+  font-size: 300%;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+div {
+      color: #eee;
+      font-size: 150%;
+      font-family: verdana, arial, helvetica, sans-serif;
+      font-weight: lighter;
+}
+
+div a{
+      color: #eee;
+      font-size: 80%;
+      font-family: verdana, arial, helvetica, sans-serif;
+      font-weight: lighter;
+      text-decoration: none;
+      padding: 1%;
+      border-radius: 10%;
+}
+
+div a:hover{
+  color: #eee !important;
+  padding: 1%;
+  background-color: #6dd168;
+  opacity: .2;
 }
 
 table {
-}
-
-/* //  // **********  Centers tables Begin ************    //     // */
-table.center {
+  width: 100%;
   margin-left:auto;
   margin-right:auto;
-  width: 100%;
+  background-color: #6a18ff ;
+  font-size: 100%;
+  line-height: 1.2;
+  color:rgb(247, 237, 247);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: verdana, arial, helvetica, sans-serif;
 }
-/* //  // **********  Centers tables End************    //     // */
+
+table tr.oddrow {
+  background-color: rgb(115, 103, 226);
+}
+
+table tr.evenrow {
+    background-color: rgb(177, 156, 230);
+}
 
 th {
-  padding-bottom: 5px;
-  text-align: center;
-
+  /* padding: 2%; */  text-align: center;
 }
+
 
 td {
-  padding: 0 5px 7px;
+  padding: 2%;
+  padding-bottom: 5%;
   text-align: center;
-
+  font-size: 150%;
+  line-height: 200%;
 }
 
-/* th:nth-child(odd) {
-    background: rgb(228, 187, 110);
+ td a {
+   font-family: Helvetica;
+   border-radius:8%;
+   text-align: center;
+   font-size: 90%;
+   padding: 1.7% 30% 1.7% 30%;
+   background-color: rgb(93, 145, 200);
+   text-decoration: none;
+   color: #fff;
+   line-height: 1.5;
+}
+
+table:hover {
+  color: #fff;
+}
+
+td:hover {
+  color: #fff;
+  border-top: 5em solid ;
+  border-top-color: rgb(98, 170, 210);
+}
+
+td:hover a {
+  background-color: rgb(98, 170, 210);
 }
 
 
-td:nth-child(odd) {
-    background: rgb(228, 187, 110);
-}
- */
-
-
-a {
-  font-family: Helvetica;
-  line-height: 1.5;
-  border-radius:5px;
-  margin-right:10px;
-  padding:.5em;
-  text-align: center;
-
+td a:hover {
+  /* background-color: rgb(91, 163, 107); */
+  /* background-color: rgb(110, 169, 231); */
+  background-color: #6dd168;
 }
 
 
@@ -96,50 +147,65 @@ a {
           /* Form Begin */
  /* ------------------------------------- */
 
-label {
-  font-family: Helvetica;
-
-}
 
 input {
   border-width: 0.05rem;
   border-radius:1rem;
-
-
 }
 
 
 
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
+  font-family: Helvetica;
+}
 
 
+p, ol, ul, td {
 
+}
 
+pre {
+  background-color: #eee;
+}
 
  /* ------------------------------------- */
           /* Form End */
  /* ------------------------------------- */
 
-
- .email{
-   font-size: 1em;
-   line-height: 1.2;
-   font-weight: lighter;
-   color: rgb(115, 103, 226);
-   text-align: center;
-
- }
-
-
- /* .button { */
-     /* background-color: #4CAF50; /* Green */
-     /* border: none; */
-     /* color: white; */
-     /* padding: 15px 32px; */
-     /* text-align: center; */
-     /* text-decoration: none; */
-     /* display: inline-block; */
-     /* font-size: 16px; */
- /* } */
 
 #comment_comment {
   background-color: #fff;
@@ -151,18 +217,6 @@ input {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
- /* ------------------------------------- */
  /* ------------------------------------- */
  /* ------------------------------------- */
  /* ------------------------------------- */
