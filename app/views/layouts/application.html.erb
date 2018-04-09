@@ -24,7 +24,7 @@
 <div> <!-- CSS in div a in aplication. -->
     <% if current_user %>
     <br>
-       <%= link_to 'Home', root_url %> |
+       <%= link_to 'Home', user_jobs_path(current_user) %> |
        <%=link_to ' New Job', new_job_path(@user) %> |
        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>﻿
          <br>

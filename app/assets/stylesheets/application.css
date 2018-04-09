@@ -43,12 +43,15 @@ body {
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
+  padding: 1%;
+  border-radius: 10%;
+
 }
 
 .email:hover{
   color: #eee;
-  font-size: 130%;
-  padding: 1%;
+  font-size: 120%;
+  padding: .7%;
   background-color: #6dd168;
   opacity: .2;
 }
@@ -79,8 +82,8 @@ div > a{
 
 div > a:hover{
   color: #eee;
-  font-size: 150%;
-  padding: 1%;
+  font-size: 110%;
+  padding: .7%;
   background-color: #6dd168;
   opacity: .2;
 }
