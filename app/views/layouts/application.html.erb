@@ -33,6 +33,7 @@
        <p><%= link_to " Welcome #{current_user.email}", user_jobs_path(current_user), :class => "email" %>
         </p>
     <% else %>
+    <br>
        <%= link_to 'Home', root_url %>
        <%=link_to 'Jobs', jobs_path %>
        <%= link_to 'Log In', new_user_session_path%>
